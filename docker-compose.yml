@@ -1,6 +1,6 @@
 version: '2'
 services:
-  tiendeo-stores-backend:
+  mongo-api:
     container_name: mongodb-api
     build:
       context: .
