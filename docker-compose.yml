@@ -1,0 +1,27 @@
+version: '2'
+services:
+  tiendeo-stores-backend:
+    container_name: mongodb-api
+    build:
+      context: .
+    logging:
+      driver: json-file
+    environment:
+      PORT: $PORT
+      MONGO_URI: $MONGO_URI
+      LOG: 1
+    volumes:
+      - ./src:/app/src
+    ports:
+      - $PORT:$PORT
+  mongodb:
+    container_name: mongodb
+    build: mongodb
+    restart: always
+    ports:
+      - 27017:27017
+
+networks:
+  default:
+    external:
+      name: development

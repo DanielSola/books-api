@@ -1,3 +1,7 @@
+#Envars
+
+services.envar
+
 # Logs
 logs
 *.log

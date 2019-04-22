@@ -1,0 +1,6 @@
+# API GLOBAL
+export NODE_ENV=dev
+export PORT=5843
+
+#MONGODB
+export MONGO_URI=mongo-uri
