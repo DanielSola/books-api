@@ -14,9 +14,9 @@ services:
       - ./src:/app/src
     ports:
       - $PORT:$PORT
-  mongodb:
-    container_name: mongodb
-    build: mongodb
+  mongo:
+    container_name: mongo
+    build: mongo
     restart: always
     ports:
       - 27017:27017

@@ -1,6 +1,8 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-
+import graphqlHTTP from 'express-graphql';
+import QueryType from 'graphQL/QueryType';
+import { GraphQLSchema } from 'graphql';
 import logger from './logger';
 import routes from 'routes';
 import { PORT } from 'config';
@@ -19,6 +21,15 @@ app.get('/ping', (req, res) => {
 Object.keys(routes).forEach(key => {
   app.use(`/${key}`, routes[key]);
 });
+
+const schema = new GraphQLSchema({
+  query: QueryType
+});
+
+app.use('/graphql', graphqlHTTP({
+  schema,             // .. using our schema
+  graphiql: true,     // .. and the GraphiQL editor - wait for it!
+}));
 
 const start = async() => {
   try {
