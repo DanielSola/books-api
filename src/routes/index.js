@@ -4,6 +4,6 @@ import authors from './authors';
 const routes = {
     books,
     authors,
-};
+  };
 
 export default routes;

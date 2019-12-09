@@ -3,4 +3,4 @@ export NODE_ENV=dev
 export PORT=5843
 
 #MONGODB
-export MONGO_URI=mongo-uri
+export MONGO_URI='mongodb://mongo:27017/books'

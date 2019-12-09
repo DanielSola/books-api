@@ -1,5 +1,5 @@
 import express from 'express';
-import {saveAuthor, getAuthorByProperty} from 'handlers';
+import { saveAuthor, getAuthorByProperty } from 'handlers';
 
 const router = new express.Router();
 
